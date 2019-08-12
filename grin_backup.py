@@ -50,6 +50,12 @@ def Space (Path):
     space=143-len(Path.name)-len(GetSize(Path))
     result=" "*space
     return result
+#fx to get file.txt created
+def Get_file_text(Path):
+    Filename=Path.split('/')[len(Path.split('/'))-1]
+    Filepath="{}/{}".format(Path,Filename)
+    result= re.findall((r'(#file_size)$'),Filepath)
+    return result
 
 
 # ExeptinalFile(r'/home/judethaddeus/Documents')
@@ -59,7 +65,7 @@ def GetFile (Path):
     File=CreateFile(Path)
     File.write("FILENAME:{}FILSIZE\n{}\n".format(" "*127,"_"*143))
     # DeleteFile(Path)
-    sleep(10)
+    # sleep(10)
     for entry in sorted(os.scandir(Path),key= comparator):
         if entry.is_file():
             # pass
@@ -76,4 +82,4 @@ def GetFile (Path):
 
         else:
             print(entry.name)
-GetFile(r'/home/judethaddeus/Music/yuda/')
+GetFile(r'/home/judethaddeus/Documents/')
