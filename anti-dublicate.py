@@ -32,4 +32,4 @@ def GetFiles (Path, container):
         # InfoSet=set(container)
 # fx check dublicated files with same name size ,path and format 
 # fx delete dublicates leaving single file
-PrintUniqueFiles(r'/home/judethaddeus/Documents/fileX')
+PrintUniqueFiles(r'/home/judethaddeus/Documents')
